@@ -1,5 +1,5 @@
 ---
-  name: Hellow world using Node Js
+  name: Hellow world using Node Js1
   on: push
   env: # Environment variables at the job level
       GLOBAL_VAR: "global value"
@@ -27,5 +27,4 @@
             for value in "${my_array[@]}"; do
             echo $value
             done
-            run: echo ${{ secrets.MY_SECRET }}
             
