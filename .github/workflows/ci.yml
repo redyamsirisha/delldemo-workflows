@@ -1,5 +1,5 @@
 ---
-  name: Hellow world using Node Js1
+  name: Hellow world using Node Js
   on: push
   env: # Environment variables at the job level
       GLOBAL_VAR: "global value"
