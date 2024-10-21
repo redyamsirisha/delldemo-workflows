@@ -3,6 +3,8 @@
   on: push
   env: # Environment variables at the job level
       GLOBAL_VAR: "global value"
+      GITHUB_TOKEN: ${{ secrets.key }}
+      MY_VAR: "1,2,3"
   jobs:
     first-job:
       runs-on: ubuntu-latest
@@ -25,7 +27,4 @@
             for value in "${my_array[@]}"; do
             echo $value
             done
-
-  env:
-    GITHUB_TOKEN: ${{ secrets.key }}
-    MY_VAR: "1,2,3"
+            
