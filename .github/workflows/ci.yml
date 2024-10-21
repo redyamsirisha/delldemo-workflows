@@ -1,6 +1,8 @@
 ---
   name: Hellow world using Node Js1
   on: push
+  env: # Environment variables at the job level
+      GLOBAL_VAR: "global value"
   jobs:
     first-job:
       runs-on: ubuntu-latest
@@ -9,6 +11,11 @@
         - run: node --version
         - run: npm -version
         - uses: actions/checkout@v3
+        - name: Print workflow-level environment variable
+          run: echo $GLOBAL_VAR
+          env: # Environment variables at the step level
+            STEP_VAR: "step value"
+        - run: echo $STEP_VAR # Accessing the step-level environment variable
         - run: npm install express
         - run: npm install jest supertest --save-dev
         - run: npm install moment --save
