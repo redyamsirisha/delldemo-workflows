@@ -9,19 +9,10 @@
     first-job:
       runs-on: ubuntu-latest
       name: node:20
-      # strategy:
-        # matrix:
-        #   node: [12, 14, 16]  # Test across multiple Node.js versions
-        #   os: [ubuntu-latest]  # Test across different operating systems
-            
       steps:
         - run: node --version
         - run: npm -version
         - uses: actions/checkout@v3
-        #   with:
-        #    node-version: ${{ matrix.node }}
-        # - run: node --version
-        # - run: echo "Running on ${{ matrix.os }}"
         - name: Print workflow-level environment variable
           run: echo $GLOBAL_VAR
           env: # Environment variables at the step level
