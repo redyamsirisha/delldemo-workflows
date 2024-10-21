@@ -27,4 +27,7 @@
             for value in "${my_array[@]}"; do
             echo $value
             done
+          env: # Step-level environment variables
+            LOCAL_VAR: "Hello, World!"
+        - run: echo "Local variable is $LOCAL_VAR"
             
