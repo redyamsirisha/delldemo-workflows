@@ -13,5 +13,12 @@
         - run: npm install jest supertest --save-dev
         - run: npm install moment --save
         - run: node app.js
+        - run: |
+            IFS=',' read -r -a my_array <<< "$MY_VAR"
+            for value in "${my_array[@]}"; do
+            echo $value
+            done
+
   env:
     GITHUB_TOKEN: ${{ secrets.key }}
+    MY_VAR: "1,2,3"
